@@ -24,6 +24,12 @@ namespace OP_sem_3_lab_1
             zoo.AddAnimal(new Primate());
 
             Console.WriteLine(zoo);
+
+            foreach (var item in zoo.Animals)
+            {
+                if (item == null) break;
+                Console.WriteLine(item.Voice());
+            }
         }
     }
 
@@ -33,6 +39,8 @@ namespace OP_sem_3_lab_1
         private Animal[] animals;
         private int pointer = 0;
 
+        public Animal[] Animals { get => animals; }
+
         private Zoo() => animals = new Animal[200];
 
         private Zoo(int capacity) 
@@ -40,7 +48,7 @@ namespace OP_sem_3_lab_1
             animals = new Animal[capacity];
         }
 
-        public static Zoo GetInstance(int capacity = 2000)
+        public static Zoo GetInstance(int capacity)
         {
             if (instance == null)
                 instance = new Zoo(capacity);
@@ -72,39 +80,9 @@ namespace OP_sem_3_lab_1
         private string habitat;
         private string type;
 
-        public static int TotalAmount
-        {
-            get { return totalAmount; }
-            set
-            {
-                if (totalAmount < 0)
-                {
-                    totalAmount = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-        }
+        public static int TotalAmount { get => totalAmount; }
 
         public string Habitat { get => habitat; }
-
-        public int Amount
-        {
-            get { return totalAmount; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException("value");
-                }
-                else
-                {
-                    totalAmount = value;
-                }
-            }
-        }
 
         static Animal()
         {
@@ -135,21 +113,7 @@ namespace OP_sem_3_lab_1
         private string habitat;
         private string type;
 
-        public static int TotalAmount
-        {
-            get { return totalAmount; }
-            set
-            {
-                if (totalAmount < 0)
-                {
-                    totalAmount = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-        }
+        public static int TotalAmount { get => totalAmount; }
 
         static WaterAnimal() => totalAmount = Dolphin.TotalAmount + JellyFish.TotalAmount;
 
@@ -192,7 +156,7 @@ namespace OP_sem_3_lab_1
             get { return totalAmount; }
             set
             {
-                if (totalAmount < 0)
+                if (value >= 0)
                 {
                     totalAmount = value;
                 }
@@ -219,7 +183,7 @@ namespace OP_sem_3_lab_1
 
         public override string Voice()
         {
-            return "I am fish";
+            return "*squeak*";
         }
 
         public override double GetPercentOfAmount()
@@ -245,7 +209,7 @@ namespace OP_sem_3_lab_1
             get { return totalAmount; }
             set
             {
-                if (totalAmount < 0)
+                if (value >= 0)
                 {
                     totalAmount = value;
                 }
@@ -270,7 +234,7 @@ namespace OP_sem_3_lab_1
         }
         public override string Voice()
         {
-            return "I am jellyfish";
+            return "*mute*";
         }
 
         public override double GetPercentOfAmount()
@@ -292,21 +256,7 @@ namespace OP_sem_3_lab_1
         private string habitat;
         private string type;
 
-        public static int TotalAmount
-        {
-            get { return totalAmount; }
-            set
-            {
-                if (totalAmount < 0)
-                {
-                    totalAmount = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-        }
+        public static int TotalAmount { get => totalAmount; }
 
         public string Habitat
         {
@@ -348,7 +298,7 @@ namespace OP_sem_3_lab_1
             get { return totalAmount; }
             set
             {
-                if (totalAmount < 0)
+                if (value >= 0)
                 {
                     totalAmount = value;
                 }
@@ -373,7 +323,7 @@ namespace OP_sem_3_lab_1
         }
         public override string Voice()
         {
-            return "I am bird";
+            return "Ahrrr";
         }
 
         public override double GetPercentOfAmount()
@@ -395,7 +345,7 @@ namespace OP_sem_3_lab_1
             get { return totalAmount; }
             set
             {
-                if (totalAmount < 0)
+                if (value >= 0)
                 {
                     totalAmount = value;
                 }
@@ -420,7 +370,7 @@ namespace OP_sem_3_lab_1
         }
         public override string Voice()
         {
-            return "I am primate";
+            return "U-u-u-a-a-a";
         }
 
         public override double GetPercentOfAmount()
