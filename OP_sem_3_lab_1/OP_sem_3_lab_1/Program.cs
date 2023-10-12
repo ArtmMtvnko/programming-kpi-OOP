@@ -1,4 +1,6 @@
-﻿namespace OP_sem_3_lab_1
+﻿using System.Collections;
+
+namespace OP_sem_3_lab_1
 {
     internal class Program
     {
@@ -13,9 +15,9 @@
             //Console.WriteLine(waterAnimal.GetPercentOfAmount());
             //Console.WriteLine(waterAnimal.Habitat);
             //Console.WriteLine(overlandAnimal.GetPercentOfAmount());
-            //Console.WriteLine();
+            Console.WriteLine(Animal.TotalAmount);
 
-            Zoo zoo = Zoo.GetInstance();
+            Zoo zoo = Zoo.GetInstance(10);
 
             zoo.AddAnimal(new Dolphin());
             zoo.AddAnimal(new Parrot());
@@ -31,7 +33,7 @@
         private Animal[] animals;
         private int pointer = 0;
 
-        private Zoo() => animals = new Animal[2000];
+        private Zoo() => animals = new Animal[200];
 
         private Zoo(int capacity) 
         {
@@ -67,8 +69,8 @@
     class Animal
     {
         private static int totalAmount;
-
         private string habitat;
+        private string type;
 
         public static int TotalAmount
         {
@@ -86,7 +88,7 @@
             }
         }
 
-        public string Habitat { get; }
+        public string Habitat { get => habitat; }
 
         public int Amount
         {
@@ -106,12 +108,13 @@
 
         static Animal()
         {
-            totalAmount = 2000000000;
+            totalAmount = WaterAnimal.TotalAmount + OverLand.TotalAmount;
         }
 
         public Animal()
         {
             habitat = "Earth";
+            type = "Animal";
         }
 
         public virtual string Voice()
@@ -121,24 +124,25 @@
 
         public virtual string GetType()
         {
-            return "Animal";
+            return type;
         }
     }
 
+
     class WaterAnimal : Animal
     {
-        private static int amountOfWaterAnimals;
-
+        private static int totalAmount;
         private string habitat;
+        private string type;
 
-        public static int AmountOfWaterAnimals
+        public static int TotalAmount
         {
-            get { return amountOfWaterAnimals; }
+            get { return totalAmount; }
             set
             {
-                if (amountOfWaterAnimals < 0)
+                if (totalAmount < 0)
                 {
-                    amountOfWaterAnimals = value;
+                    totalAmount = value;
                 }
                 else
                 {
@@ -147,7 +151,7 @@
             }
         }
 
-        static WaterAnimal() => amountOfWaterAnimals = 1500000000;
+        static WaterAnimal() => totalAmount = Dolphin.TotalAmount + JellyFish.TotalAmount;
 
         public string Habitat
         {
@@ -157,6 +161,7 @@
         public WaterAnimal()
         {
             habitat = "Water";
+            type = "Water Animal";
         }
 
         public override string Voice()
@@ -166,25 +171,30 @@
 
         public virtual double GetPercentOfAmount()
         {
-            Console.WriteLine("A: {0};\tT: {1}", amountOfWaterAnimals, Animal.TotalAmount);
-            return ((double)amountOfWaterAnimals / (double)Animal.TotalAmount) * 100;
+            Console.WriteLine("A: {0};\tT: {1}", totalAmount, Animal.TotalAmount);
+            return ((double)totalAmount / (double)Animal.TotalAmount) * 100;
+        }
+
+        public override string GetType()
+        {
+            return type;
         }
     }
 
     class Dolphin : WaterAnimal
     {
-        private static int amount;
+        private static int totalAmount;
         private string habitat;
-        private string type = "dolphin";
+        private string type;
 
-        public static int Amount
+        public static int TotalAmount
         {
-            get { return amount; }
+            get { return totalAmount; }
             set
             {
-                if (amount < 0)
+                if (totalAmount < 0)
                 {
-                    amount = value;
+                    totalAmount = value;
                 }
                 else
                 {
@@ -193,18 +203,18 @@
             }
         }
 
-        public string Type { get; }
 
         public string Habitat
         {
             get => habitat;
         }
 
-        static Dolphin() => amount = 1300000000;
+        static Dolphin() => totalAmount = 1300000000;
 
         public Dolphin()
         {
             habitat = "All ponds";
+            type = "Dolphin";
         }
 
         public override string Voice()
@@ -214,30 +224,30 @@
 
         public override double GetPercentOfAmount()
         {
-            Console.WriteLine("A: {0};\tT: {1}", amount, Animal.TotalAmount);
-            return ((double)amount / (double)Animal.TotalAmount) * 100;
+            Console.WriteLine("A: {0};\tT: {1}", totalAmount, Animal.TotalAmount);
+            return ((double)totalAmount / (double)Animal.TotalAmount) * 100;
         }
 
         public override string GetType()
         {
-            return "Dolphin";
+            return type;
         }
     }
 
     class JellyFish : WaterAnimal
     {
-        private static int amount;
+        private static int totalAmount;
         private string habitat;
+        private string type;
 
-
-        public static int Amount
+        public static int TotalAmount
         {
-            get { return amount; }
+            get { return totalAmount; }
             set
             {
-                if (amount < 0)
+                if (totalAmount < 0)
                 {
-                    amount = value;
+                    totalAmount = value;
                 }
                 else
                 {
@@ -251,11 +261,12 @@
             get => habitat;
         }
 
-        static JellyFish() => amount = 200000000;
+        static JellyFish() => totalAmount = 200000000;
 
         public JellyFish()
         {
             habitat = "All oceans";
+            type = "Jellyfish";
         }
         public override string Voice()
         {
@@ -264,25 +275,31 @@
 
         public override double GetPercentOfAmount()
         {
-            Console.WriteLine("A: {0};\tT: {1}", amount, Animal.TotalAmount);
-            return ((double)amount / (double)Animal.TotalAmount) * 100;
+            Console.WriteLine("A: {0};\tT: {1}", totalAmount, Animal.TotalAmount);
+            return ((double)totalAmount / (double)Animal.TotalAmount) * 100;
+        }
+
+        public override string GetType()
+        {
+            return type;
         }
     }
 
 
     class OverLand : Animal
     {
-        private static int amountOfOverlandAnimals;
+        private static int totalAmount;
         private string habitat;
+        private string type;
 
-        public static int AmountOfOverlandAnimals
+        public static int TotalAmount
         {
-            get { return amountOfOverlandAnimals; }
+            get { return totalAmount; }
             set
             {
-                if (amountOfOverlandAnimals < 0)
+                if (totalAmount < 0)
                 {
-                    amountOfOverlandAnimals = value;
+                    totalAmount = value;
                 }
                 else
                 {
@@ -296,11 +313,12 @@
             get => habitat;
         }
 
-        static OverLand() => amountOfOverlandAnimals = 500000000;
+        static OverLand() => totalAmount = Parrot.TotalAmount + Primate.TotalAmount;
 
         public OverLand()
         {
             habitat = "Land";
+            type = "Overland Animal";
         }
         public override string Voice()
         {
@@ -309,24 +327,30 @@
 
         public virtual double GetPercentOfAmount()
         {
-            Console.WriteLine("A: {0};\tT: {1}", amountOfOverlandAnimals, Animal.TotalAmount);
-            return ((double)amountOfOverlandAnimals / (double)Animal.TotalAmount) * 100;
+            Console.WriteLine("A: {0};\tT: {1}", totalAmount, Animal.TotalAmount);
+            return ((double)totalAmount / (double)Animal.TotalAmount) * 100;
+        }
+
+        public override string GetType()
+        {
+            return type;
         }
     }
 
     class Parrot : OverLand
     {
-        private static int amount;
+        private static int totalAmount;
         private string habitat;
+        private string type;
 
-        public static int Amount
+        public static int TotalAmount
         {
-            get { return amount; }
+            get { return totalAmount; }
             set
             {
-                if (amount < 0)
+                if (totalAmount < 0)
                 {
-                    amount = value;
+                    totalAmount = value;
                 }
                 else
                 {
@@ -340,11 +364,12 @@
             get => habitat;
         }
 
-        static Parrot() => amount = 100000000;
+        static Parrot() => totalAmount = 100000000;
 
         public Parrot()
         {
             habitat = "All continents";
+            type = "Parrot";
         }
         public override string Voice()
         {
@@ -353,23 +378,26 @@
 
         public override double GetPercentOfAmount()
         {
-            Console.WriteLine("A: {0};\tT: {1}", amount, Animal.TotalAmount);
-            return ((double)amount / (double)Animal.TotalAmount) * 100;
+            Console.WriteLine("A: {0};\tT: {1}", totalAmount, Animal.TotalAmount);
+            return ((double)totalAmount / (double)Animal.TotalAmount) * 100;
         }
+
+        public override string GetType() => type;
     }
     class Primate : OverLand
     {
-        private static int amount;
+        private static int totalAmount;
         private string habitat;
+        private string type;
 
-        public static int Amount
+        public static int TotalAmount
         {
-            get { return amount; }
+            get { return totalAmount; }
             set
             {
-                if (amount < 0)
+                if (totalAmount < 0)
                 {
-                    amount = value;
+                    totalAmount = value;
                 }
                 else
                 {
@@ -383,11 +411,12 @@
             get => habitat;
         }
 
-        static Primate() => amount = 100000000;
+        static Primate() => totalAmount = 400000000;
 
         public Primate()
         {
             habitat = "All continents";
+            type = "Primate";
         }
         public override string Voice()
         {
@@ -396,8 +425,10 @@
 
         public override double GetPercentOfAmount()
         {
-            Console.WriteLine("A: {0};\tT: {1}", amount, Animal.TotalAmount);
-            return ((double)amount / (double)Animal.TotalAmount) * 100;
+            Console.WriteLine("A: {0};\tT: {1}", totalAmount, Animal.TotalAmount);
+            return ((double)totalAmount / (double)Animal.TotalAmount) * 100;
         }
+
+        public override string GetType() => type;
     }
 }
