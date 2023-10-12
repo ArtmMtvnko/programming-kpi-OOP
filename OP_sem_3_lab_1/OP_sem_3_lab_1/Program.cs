@@ -13,8 +13,7 @@
             Console.WriteLine(waterAnimal.GetPercentOfAmount());
             Console.WriteLine(waterAnimal.Habitat);
             Console.WriteLine(overlandAnimal.GetPercentOfAmount());
-            Animals.x = 10;
-            Console.WriteLine(Animals.x);
+            Console.WriteLine();
         }
     }
 
@@ -34,9 +33,25 @@
 
     class Animals
     {
-        public static int x = 999999;
+        private static int totalAmount;
+
         private string habitat;
-        protected int totalAmount;
+
+        public static int TotalAmount
+        {
+            get { return totalAmount; }
+            set
+            {
+                if (totalAmount < 0)
+                {
+                    totalAmount = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
 
         public string Habitat
         {
@@ -59,16 +74,14 @@
             }
         }
 
-        public Animals()
+        static Animals()
         {
-            habitat = "Earth";
             totalAmount = 2000000000;
         }
 
-        public Animals(int amount)
+        public Animals()
         {
             habitat = "Earth";
-            totalAmount = amount;
         }
 
         public virtual string Voice()
@@ -79,8 +92,27 @@
 
     class WaterAnimal : Animals
     {
+        private static int amountOfWaterAnimals;
+
         private string habitat;
-        protected int amountOfWaterAnimals;
+
+        public static int AmountOfWaterAnimals
+        {
+            get { return amountOfWaterAnimals; }
+            set
+            {
+                if (amountOfWaterAnimals < 0)
+                {
+                    amountOfWaterAnimals = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+
+        static WaterAnimal() => amountOfWaterAnimals = 1500000000;
 
         public string Habitat
         {
@@ -90,7 +122,6 @@
         public WaterAnimal()
         {
             habitat = "Water";
-            amountOfWaterAnimals = 1500000000;
         }
 
         public override string Voice()
@@ -100,25 +131,45 @@
 
         public virtual double GetPercentOfAmount()
         {
-            Console.WriteLine("A: {0};\tT: {1}", amountOfWaterAnimals, totalAmount);
-            return ((double)amountOfWaterAnimals / (double)totalAmount) * 100;
+            Console.WriteLine("A: {0};\tT: {1}", amountOfWaterAnimals, Animals.TotalAmount);
+            return ((double)amountOfWaterAnimals / (double)Animals.TotalAmount) * 100;
         }
     }
 
     class Fish : WaterAnimal
     {
+        private static int amount;
         private string habitat;
-        private int amount;
+
+
+        public static int Amount
+        {
+            get { return amount; }
+            set
+            {
+                if (amount < 0)
+                {
+                    amount = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
 
         public string Habitat
         {
             get => habitat;
         }
 
+        static Fish() => amount = 1300000000;
+
         public Fish()
         {
             habitat = "All ponds";
         }
+
         public override string Voice()
         {
             return "I am fish";
@@ -126,19 +177,39 @@
 
         public override double GetPercentOfAmount()
         {
-            Console.WriteLine("A: {0};\tT: {1}", amount, totalAmount);
-            return ((double)amount / (double)totalAmount) * 100;
+            Console.WriteLine("A: {0};\tT: {1}", amount, Animals.TotalAmount);
+            return ((double)amount / (double)Animals.TotalAmount) * 100;
         }
     }
 
     class JellyFish : WaterAnimal
     {
+        private static int amount;
         private string habitat;
+
+
+        public static int Amount
+        {
+            get { return amount; }
+            set
+            {
+                if (amount < 0)
+                {
+                    amount = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
 
         public string Habitat
         {
             get => habitat;
         }
+
+        static JellyFish() => amount = 200000000;
 
         public JellyFish()
         {
@@ -148,42 +219,143 @@
         {
             return "I am jellyfish";
         }
+
+        public override double GetPercentOfAmount()
+        {
+            Console.WriteLine("A: {0};\tT: {1}", amount, Animals.TotalAmount);
+            return ((double)amount / (double)Animals.TotalAmount) * 100;
+        }
     }
 
 
     class OverLand : Animals
     {
+        private static int amountOfOverlandAnimals;
         private string habitat;
-        protected int amountOfOverlandAnimals;
+
+        public static int AmountOfOverlandAnimals
+        {
+            get { return amountOfOverlandAnimals; }
+            set
+            {
+                if (amountOfOverlandAnimals < 0)
+                {
+                    amountOfOverlandAnimals = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
 
         public string Habitat
         {
             get => habitat;
         }
 
+        static OverLand() => amountOfOverlandAnimals = 500000000;
+
         public OverLand()
         {
-            habitat = "All contitents";
-            amountOfOverlandAnimals = 500000000;
+            habitat = "Land";
         }
         public override string Voice()
         {
             return "I am overland animal";
         }
 
-        public double GetPercentOfAmount()
+        public virtual double GetPercentOfAmount()
         {
-            Console.WriteLine("A: {0};\tT: {1}", amountOfOverlandAnimals, totalAmount);
-            return ((double)amountOfOverlandAnimals / (double)totalAmount) * 100;
+            Console.WriteLine("A: {0};\tT: {1}", amountOfOverlandAnimals, Animals.TotalAmount);
+            return ((double)amountOfOverlandAnimals / (double)Animals.TotalAmount) * 100;
         }
     }
 
     class Bird : OverLand
     {
+        private static int amount;
+        private string habitat;
 
+        public static int Amount
+        {
+            get { return amount; }
+            set
+            {
+                if (amount < 0)
+                {
+                    amount = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+
+        public string Habitat
+        {
+            get => habitat;
+        }
+
+        static Bird() => amount = 100000000;
+
+        public Bird()
+        {
+            habitat = "All continents";
+        }
+        public override string Voice()
+        {
+            return "I am bird";
+        }
+
+        public override double GetPercentOfAmount()
+        {
+            Console.WriteLine("A: {0};\tT: {1}", amount, Animals.TotalAmount);
+            return ((double)amount / (double)Animals.TotalAmount) * 100;
+        }
     }
     class Primate : OverLand
     {
+        private static int amount;
+        private string habitat;
 
+        public static int Amount
+        {
+            get { return amount; }
+            set
+            {
+                if (amount < 0)
+                {
+                    amount = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+
+        public string Habitat
+        {
+            get => habitat;
+        }
+
+        static Primate() => amount = 100000000;
+
+        public Primate()
+        {
+            habitat = "All continents";
+        }
+        public override string Voice()
+        {
+            return "I am primate";
+        }
+
+        public override double GetPercentOfAmount()
+        {
+            Console.WriteLine("A: {0};\tT: {1}", amount, Animals.TotalAmount);
+            return ((double)amount / (double)Animals.TotalAmount) * 100;
+        }
     }
 }
