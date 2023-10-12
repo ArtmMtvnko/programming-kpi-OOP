@@ -1,11 +1,10 @@
-﻿using System.Collections;
-
-namespace OP_sem_3_lab_1
+﻿namespace OP_sem_3_lab_1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            void Test() => Console.WriteLine("asdfasdf");
             //Animal animal = new Animal();
             //Console.WriteLine(animal);
 
@@ -30,6 +29,13 @@ namespace OP_sem_3_lab_1
                 if (item == null) break;
                 Console.WriteLine(item.Voice());
             }
+
+            Thread sec = new Thread(Test);
+            sec.Start();
+
+            Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+
+            GC.Collect();
         }
     }
 
@@ -57,6 +63,7 @@ namespace OP_sem_3_lab_1
 
         public void AddAnimal(Animal animal)
         {
+            if (pointer == animals.Length) return;
             animals[pointer++] = animal;
         }
 
