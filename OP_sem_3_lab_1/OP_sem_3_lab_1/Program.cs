@@ -4,7 +4,6 @@
     {
         static void Main(string[] args)
         {
-            void Test() => Console.WriteLine("asdfasdf");
             //Animal animal = new Animal();
             //Console.WriteLine(animal);
 
@@ -14,7 +13,21 @@
             //Console.WriteLine(waterAnimal.GetPercentOfAmount());
             //Console.WriteLine(waterAnimal.Habitat);
             //Console.WriteLine(overlandAnimal.GetPercentOfAmount());
-            Console.WriteLine(Animal.TotalAmount);
+            //Console.WriteLine(Animal.TotalAmount);
+
+            for (int i = 0; i < 2; i++)
+            {
+                Primate p = new Primate();
+                p = null;
+                GC.Collect();
+            }
+            Thread.Sleep(100);
+            for (int i = 0; i < 100; i++)
+            {
+                object objTrash = new byte[85000]; // 84976
+                Console.WriteLine("MEMORY: " + GC.GetTotalMemory(false) / 1024);
+            }
+            Thread.Sleep(1000);
 
             Zoo zoo = Zoo.GetInstance(10);
 
@@ -30,12 +43,20 @@
                 Console.WriteLine(item.Voice());
             }
 
-            Thread sec = new Thread(Test);
-            sec.Start();
+            //Console.WriteLine("Tread:" + Thread.CurrentThread.ManagedThreadId);
 
-            Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            object obj = new byte[85000];//84976
 
-            GC.Collect();
+            //Console.WriteLine("Generation before collection: " + GC.GetGeneration(zoo));
+            //GC.Collect();
+            //Console.WriteLine("Generation after collection: " + GC.GetGeneration(zoo));
+            //Console.WriteLine("Generation of big object: " + GC.GetGeneration(obj));
+            //Console.WriteLine("PRIMATE: " + GC.GetGeneration(p));
+            Console.WriteLine("MEMORY: " + GC.GetTotalMemory(false) / 1024);
+            Console.WriteLine("Gen 0: " + GC.CollectionCount(0));
+            Console.WriteLine("Gen 1: " + GC.CollectionCount(1));
+            Console.WriteLine("Gen 2: " + GC.CollectionCount(2));
+            //GC.Collect();
         }
     }
 
@@ -346,6 +367,7 @@
         private static int totalAmount;
         private string habitat;
         private string type;
+        byte[] a = new byte[1024 * 1000];
 
         public static int TotalAmount
         {
@@ -372,9 +394,12 @@
 
         public Primate()
         {
+            //Console.WriteLine("I was bonr 0_0");
             habitat = "All continents";
             type = "Primate";
         }
+
+        ~Primate() { Console.WriteLine("I am done...... x_x"); }
         public override string Voice()
         {
             return "U-u-u-a-a-a";
