@@ -1,62 +1,65 @@
-﻿namespace OP_sem_3_lab_1
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace OP_sem_3_lab_1
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void GenerateTrash()
         {
-            //Animal animal = new Animal();
-            //Console.WriteLine(animal);
-
-            //WaterAnimal waterAnimal = new WaterAnimal();
-            //OverLand overlandAnimal = new OverLand();
-
-            //Console.WriteLine(waterAnimal.GetPercentOfAmount());
-            //Console.WriteLine(waterAnimal.Habitat);
-            //Console.WriteLine(overlandAnimal.GetPercentOfAmount());
-            //Console.WriteLine(Animal.TotalAmount);
-
-            for (int i = 0; i < 2; i++)
-            {
-                Primate p = new Primate();
-                p = null;
-                GC.Collect();
-            }
-            Thread.Sleep(100);
             for (int i = 0; i < 100; i++)
             {
                 object objTrash = new byte[85000]; // 84976
                 Console.WriteLine("MEMORY: " + GC.GetTotalMemory(false) / 1024);
             }
             Thread.Sleep(1000);
+        }
+        static void Main(string[] args)
+        {
+            // ======= About classes =========
 
-            Zoo zoo = Zoo.GetInstance(10);
+            //Zoo zoo = Zoo.GetInstance(10);
 
-            zoo.AddAnimal(new Dolphin());
-            zoo.AddAnimal(new Parrot());
-            zoo.AddAnimal(new Primate());
+            //zoo.AddAnimal(new Dolphin());
+            //zoo.AddAnimal(new Parrot());
+            //zoo.AddAnimal(new Primate());
 
-            Console.WriteLine(zoo);
+            //Console.WriteLine(zoo);
 
-            foreach (var item in zoo.Animals)
-            {
-                if (item == null) break;
-                Console.WriteLine(item.Voice());
-            }
+            //foreach (var item in zoo.Animals)
+            //{
+            //    if (item == null) break;
+            //    Console.WriteLine(item.Voice());
+            //}
+
+            // ======= About classes END =========
 
             //Console.WriteLine("Tread:" + Thread.CurrentThread.ManagedThreadId);
-
-            object obj = new byte[85000];//84976
 
             //Console.WriteLine("Generation before collection: " + GC.GetGeneration(zoo));
             //GC.Collect();
             //Console.WriteLine("Generation after collection: " + GC.GetGeneration(zoo));
             //Console.WriteLine("Generation of big object: " + GC.GetGeneration(obj));
             //Console.WriteLine("PRIMATE: " + GC.GetGeneration(p));
-            Console.WriteLine("MEMORY: " + GC.GetTotalMemory(false) / 1024);
-            Console.WriteLine("Gen 0: " + GC.CollectionCount(0));
-            Console.WriteLine("Gen 1: " + GC.CollectionCount(1));
-            Console.WriteLine("Gen 2: " + GC.CollectionCount(2));
+            //Console.WriteLine("MEMORY: " + GC.GetTotalMemory(false) / 1024);
+            //Console.WriteLine("Max Generation: " + GC.MaxGeneration);
+            //Console.WriteLine("Gen 0: " + GC.CollectionCount(0));
+            //Console.WriteLine("Gen 1: " + GC.CollectionCount(1));
+            //Console.WriteLine("Gen 2: " + GC.CollectionCount(2));
             //GC.Collect();
+
+            for (int i = 0; i < 2; i++)
+            {
+                Animal animal = new Animal();
+                animal.Dispose();
+                GC.ReRegisterForFinalize(animal);
+            }
+
+            Console.WriteLine("Memory before garbage collection: {0}" ,GC.GetTotalMemory(false) / 1024);
+            GC.Collect(2, GCCollectionMode.Forced);
+            GC.WaitForPendingFinalizers();
+            Console.WriteLine("Memory after garbage collection: {0}", GC.GetTotalMemory(false) / 1024);
+
+            Thread.Sleep(100);
         }
     }
 
@@ -95,18 +98,19 @@
             foreach (var animal in animals)
             {
                 if (animal == null) break;
-                output += $"{animal.GetType()}, ";
+                output += $"{animal.GetTypeOfAnimal()}, ";
             }
 
             return output + " ]";
         }
     }
 
-    class Animal
+    class Animal : IDisposable
     {
         private static int totalAmount;
         private string habitat;
         private string type;
+        private bool disposed = false;
 
         public static int TotalAmount { get => totalAmount; }
 
@@ -128,9 +132,39 @@
             return "I am animal";
         }
 
-        public virtual string GetType()
+        public virtual string GetTypeOfAnimal()
         {
             return type;
+        }
+
+        public void Dispose()
+        {
+            CleanUp(true);
+
+            GC.SuppressFinalize(this);
+        }
+
+        private void CleanUp(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    Console.WriteLine("I am from dispose");
+                }
+                Console.WriteLine("Logic from destructor");
+
+                // this.disposed = true;
+                // Don't know proper way, this.disposed = true; -- inside "if" block
+                // or outside like below?
+            }
+            this.disposed = true;
+        }
+
+        ~Animal()
+        {
+            Console.WriteLine("I am from destructor (finalize)");
+            CleanUp(false);
         }
     }
 
@@ -167,7 +201,7 @@
             return ((double)totalAmount / (double)Animal.TotalAmount) * 100;
         }
 
-        public override string GetType()
+        public override string GetTypeOfAnimal()
         {
             return type;
         }
@@ -220,7 +254,7 @@
             return ((double)totalAmount / (double)Animal.TotalAmount) * 100;
         }
 
-        public override string GetType()
+        public override string GetTypeOfAnimal()
         {
             return type;
         }
@@ -271,7 +305,7 @@
             return ((double)totalAmount / (double)Animal.TotalAmount) * 100;
         }
 
-        public override string GetType()
+        public override string GetTypeOfAnimal()
         {
             return type;
         }
@@ -309,7 +343,7 @@
             return ((double)totalAmount / (double)Animal.TotalAmount) * 100;
         }
 
-        public override string GetType()
+        public override string GetTypeOfAnimal()
         {
             return type;
         }
@@ -360,8 +394,9 @@
             return ((double)totalAmount / (double)Animal.TotalAmount) * 100;
         }
 
-        public override string GetType() => type;
+        public override string GetTypeOfAnimal() => type;
     }
+
     class Primate : OverLand
     {
         private static int totalAmount;
@@ -411,6 +446,6 @@
             return ((double)totalAmount / (double)Animal.TotalAmount) * 100;
         }
 
-        public override string GetType() => type;
+        public override string GetTypeOfAnimal() => type;
     }
 }
