@@ -6,15 +6,39 @@ namespace OP_sem_3_lab_1
     {
         static void GenerateTrash()
         {
+            object small = new byte[1024];
             for (int i = 0; i < 100; i++)
             {
                 object objTrash = new byte[85000]; // 84976
                 Console.WriteLine("MEMORY: " + GC.GetTotalMemory(false) / 1024);
+                Console.WriteLine("Generation of small object: {0}", GC.GetGeneration(small));
             }
-            Thread.Sleep(1000);
+            GC.Collect(1);
+            Console.WriteLine(GC.CollectionCount(0));
+            Console.WriteLine(GC.CollectionCount(1));
+            Console.WriteLine(GC.CollectionCount(2));
         }
         static void Main(string[] args)
         {
+
+            //new Thread(GenerateTrash).Start();
+
+
+            //With Dispose()
+            for (int i = 0; i < 100; i++)
+            {
+                Animal animal = new Animal();
+                animal.Dispose(); // !!!
+                GC.ReRegisterForFinalize(animal);
+                Console.WriteLine("MEMORY: " + GC.GetTotalMemory(false) / 1024);
+            }
+
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            Console.WriteLine("MEMORY: " + GC.GetTotalMemory(false) / 1024);
+
+            Thread.Sleep(1000);
+
             // ======= About classes =========
 
             //Zoo zoo = Zoo.GetInstance(10);
@@ -47,19 +71,22 @@ namespace OP_sem_3_lab_1
             //Console.WriteLine("Gen 2: " + GC.CollectionCount(2));
             //GC.Collect();
 
-            for (int i = 0; i < 2; i++)
-            {
-                Animal animal = new Animal();
-                animal.Dispose();
-                GC.ReRegisterForFinalize(animal);
-            }
+            //for (int i = 0; i < 2; i++)
+            //{
+            //    Animal animal = new Animal();
+            //    animal.Dispose();
+            //    GC.ReRegisterForFinalize(animal);
+            //}
 
-            Console.WriteLine("Memory before garbage collection: {0}" ,GC.GetTotalMemory(false) / 1024);
-            GC.Collect(2, GCCollectionMode.Forced);
-            GC.WaitForPendingFinalizers();
-            Console.WriteLine("Memory after garbage collection: {0}", GC.GetTotalMemory(false) / 1024);
+            //Console.WriteLine("Memory before garbage collection: {0}", GC.GetTotalMemory(false) / 1024);
+            //GC.Collect(2, GCCollectionMode.Forced);
+            //GC.WaitForPendingFinalizers();
+            //Console.WriteLine("Memory after garbage collection: {0}", GC.GetTotalMemory(false) / 1024);
 
-            Thread.Sleep(100);
+            //Thread.Sleep(100);
+
+
+
         }
     }
 
@@ -152,7 +179,7 @@ namespace OP_sem_3_lab_1
                 {
                     Console.WriteLine("I am from dispose");
                 }
-                Console.WriteLine("Logic from destructor");
+                Console.WriteLine("Logic from destructor in CleanUp");
 
                 // this.disposed = true;
                 // Don't know proper way, this.disposed = true; -- inside "if" block
@@ -429,7 +456,7 @@ namespace OP_sem_3_lab_1
 
         public Primate()
         {
-            //Console.WriteLine("I was bonr 0_0");
+            //Console.WriteLine("I have borned 0_0");
             habitat = "All continents";
             type = "Primate";
         }

@@ -3,63 +3,64 @@
   <Class Name="OP_sem_3_lab_1.Program" Collapsed="true">
     <Position X="16.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OP_sem_3_lab_1.Zoo" Collapsed="true">
     <Position X="18" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACAAAEAAAAAAAAFABAAAAAAAAEAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAACAAAEAAAQAAAAFABAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OP_sem_3_lab_1.Animal" Collapsed="true">
     <Position X="12.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAQAAAAEAAAAAAAAAABAAEAAAAAAAEAAAg=</HashCode>
+      <HashCode>AQIAAAAAACAQAAAAEAAAABAAAAABAAAAAAAAAEEAAAg=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="OP_sem_3_lab_1.WaterAnimal" Collapsed="true">
     <Position X="10" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAQIAAAEAAAAAAAAAABAAEAAAAAAAEAAAg=</HashCode>
+      <HashCode>AQAAAAAAAAAQIAAAEAAAABAAAAABAAAAAAAAAAEAAAg=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OP_sem_3_lab_1.Dolphin" Collapsed="true">
     <Position X="9" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAQIAAAEAAAAAAAAAABAAEAAAAAAAEAAAg=</HashCode>
+      <HashCode>AQAAAAAAAAAQIAAAEAAAABAAAAABAAAAAAAAAAEAAAg=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OP_sem_3_lab_1.JellyFish" Collapsed="true">
     <Position X="11.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAQIAAAEAAAAAAAAAABAAEAAAAAAAEAAAg=</HashCode>
+      <HashCode>AQAAAAAAAAAQIAAAEAAAABAAAAABAAAAAAAAAAEAAAg=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OP_sem_3_lab_1.OverLand" Collapsed="true">
     <Position X="14.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAQIAAAEAAAAAAAAAABAAEAAAAAAAEAAAg=</HashCode>
+      <HashCode>AQAAAAAAAAAQIAAAEAAAABAAAAABAAAAAAAAAAEAAAg=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OP_sem_3_lab_1.Parrot" Collapsed="true">
     <Position X="13.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAQIAAAEAAAAAAAAAABAAEAAAAAAAEAAAg=</HashCode>
+      <HashCode>AQAAAAAAAAAQIAAAEAAAABAAAAABAAAAAAAAAAEAAAg=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OP_sem_3_lab_1.Primate" Collapsed="true">
     <Position X="15.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAQIAAAEAAAAAAAAAABAAEAAAAAAAEAAAg=</HashCode>
+      <HashCode>AQAAAAAAAAAQIAAAEAAAABAAAAABAAAgAAAAAAEAAAg=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
