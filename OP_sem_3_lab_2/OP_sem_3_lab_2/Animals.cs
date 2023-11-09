@@ -42,6 +42,8 @@ namespace OP_sem_3_lab_2
             }
         }
 
+        public int ToDoCount { get => toDoList.Count; }
+
         public Employee(Zoo zoo)
         {
             zoo.AnimalAdded += AddTask; // += new AnimalAddHandler(AddTask);
@@ -55,8 +57,20 @@ namespace OP_sem_3_lab_2
 
         public void CompleteTask()
         {
-            toDoList.RemoveAt(0); // MyException
-            Console.WriteLine("I have Done task!");
+            try
+            {
+                if (toDoList.Count == 0)
+                    throw new EmptyTaskExeption("There are no more tasks to do", this);
+
+                toDoList.RemoveAt(0);
+                Console.WriteLine("I have Done task!");
+            }
+            catch (EmptyTaskExeption ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("Current count of tasks: {0}", ex.TasksCount);
+                Console.WriteLine("Take more tasks or check stack of calling CompleteTask() method");
+            }
         }
 
         public void CompleteTask(Action action)
@@ -68,8 +82,26 @@ namespace OP_sem_3_lab_2
 
         public TimeSpan GetTimeLeft(Func<DateTime> func)
         {
-            DateTime current = (DateTime)func?.Invoke(); // MyException
-            return endOfShift - current;
+            try
+            {
+                DateTime current = (DateTime)func?.Invoke();
+
+                if (current > endOfShift)
+                    throw new NegativeTimeExeption("Shift has already ended", new TimeExeptionArgs(endOfShift, current));
+
+                return endOfShift - current;
+
+            }
+            catch (NegativeTimeExeption ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Value of current time <{ex.TimeExeptionArgs.Current}>" +
+                    $", value of shift end time <{ex.TimeExeptionArgs.EndOfShift}>\n" +
+                    $"Current time more than end of shift time: " +
+                    $"{ex.TimeExeptionArgs.EndOfShift} > {ex.TimeExeptionArgs.Current}");
+            }
+
+            return default(TimeSpan);
         }
     }
 

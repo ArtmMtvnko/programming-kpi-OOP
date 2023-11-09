@@ -24,11 +24,37 @@ namespace OP_sem_3_lab_2
     class EmptyTaskExeption : Exception
     {
         private int tasksCount;
-        public int TasksAmount { get => tasksCount; }
+        public int TasksCount { get => tasksCount; }
 
         public EmptyTaskExeption(string messege, Employee employee) : base(messege)
         {
-            
+            tasksCount = employee.ToDoCount;
+        }
+    }
+
+    class NegativeTimeExeption : Exception
+    {
+        public TimeExeptionArgs TimeExeptionArgs { get; }
+        public NegativeTimeExeption(string messege, TimeExeptionArgs timeExeptionArgs) : base(messege)
+        {
+            TimeExeptionArgs = timeExeptionArgs;
+        }
+    }
+
+    class TimeExeptionArgs
+    {
+        public DateTime Current { get; }
+        public DateTime EndOfShift { get; }
+        public TimeExeptionArgs(DateTime endOfShift)
+        {
+            Current = DateTime.Now;
+            EndOfShift = endOfShift;
+        }
+
+        public TimeExeptionArgs(DateTime endOfShift, DateTime current)
+        {
+            Current = current;
+            EndOfShift = endOfShift;
         }
     }
 }

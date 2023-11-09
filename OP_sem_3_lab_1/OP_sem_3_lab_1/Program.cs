@@ -28,16 +28,19 @@ namespace OP_sem_3_lab_1
             for (int i = 0; i < 100; i++)
             {
                 Animal animal = new Animal();
-                animal.Dispose(); // !!!
+                animal.Dispose();
                 GC.ReRegisterForFinalize(animal);
                 Console.WriteLine("MEMORY: " + GC.GetTotalMemory(false) / 1024);
             }
 
-            GC.Collect();
+            GC.Collect(1);
             GC.WaitForPendingFinalizers();
             Console.WriteLine("MEMORY: " + GC.GetTotalMemory(false) / 1024);
 
             Thread.Sleep(1000);
+
+
+
 
             // ======= About classes =========
 
@@ -180,10 +183,6 @@ namespace OP_sem_3_lab_1
                     Console.WriteLine("I am from dispose");
                 }
                 Console.WriteLine("Logic from destructor in CleanUp");
-
-                // this.disposed = true;
-                // Don't know proper way, this.disposed = true; -- inside "if" block
-                // or outside like below?
             }
             this.disposed = true;
         }
@@ -429,7 +428,6 @@ namespace OP_sem_3_lab_1
         private static int totalAmount;
         private string habitat;
         private string type;
-        byte[] a = new byte[1024 * 1000];
 
         public static int TotalAmount
         {
@@ -456,7 +454,6 @@ namespace OP_sem_3_lab_1
 
         public Primate()
         {
-            //Console.WriteLine("I have borned 0_0");
             habitat = "All continents";
             type = "Primate";
         }
