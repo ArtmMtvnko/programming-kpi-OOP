@@ -15,7 +15,7 @@ namespace OP_sem_3_lab_2
             IFalling parrot2 = new Parrot();
             parrot2.Fall();
 
-            Zoo zoo = Zoo.GetInstance(3);
+            Zoo zoo = Zoo.GetInstance(3); // 3 => 2
             Employee employee = new Employee(zoo);
 
             zoo.AddAnimal(new Parrot());
