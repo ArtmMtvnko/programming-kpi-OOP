@@ -43,15 +43,15 @@ namespace OP_sem_3_lab_2
 
     class TimeExeptionArgs
     {
-        public DateTime Current { get; }
-        public DateTime EndOfShift { get; }
-        public TimeExeptionArgs(DateTime endOfShift)
+        public TimeSpan Current { get; }
+        public TimeSpan EndOfShift { get; }
+        public TimeExeptionArgs(TimeSpan endOfShift)
         {
-            Current = DateTime.Now;
+            Current = DateTime.Now.TimeOfDay;
             EndOfShift = endOfShift;
         }
 
-        public TimeExeptionArgs(DateTime endOfShift, DateTime current)
+        public TimeExeptionArgs(TimeSpan endOfShift, TimeSpan current)
         {
             Current = current;
             EndOfShift = endOfShift;

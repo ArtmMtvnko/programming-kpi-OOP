@@ -27,7 +27,7 @@ namespace OP_sem_3_lab_2
     class Employee
     {
         List<Animal> toDoList = new List<Animal>();
-        DateTime endOfShift = DateTime.Today.AddHours(20);
+        TimeSpan endOfShift = DateTime.Today.AddHours(20).TimeOfDay;
 
         public string ToDoList
         {
@@ -80,11 +80,11 @@ namespace OP_sem_3_lab_2
             action?.Invoke();
         }
 
-        public TimeSpan GetTimeLeft(Func<DateTime> func)
+        public TimeSpan GetTimeLeft(Func<TimeSpan> func)
         {
             try
             {
-                DateTime current = (DateTime)func?.Invoke();
+                TimeSpan current = (TimeSpan)func?.Invoke();
 
                 if (current > endOfShift)
                     throw new NegativeTimeExeption("Shift has already ended", new TimeExeptionArgs(endOfShift, current));

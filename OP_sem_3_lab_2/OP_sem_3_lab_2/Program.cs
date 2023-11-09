@@ -15,7 +15,7 @@ namespace OP_sem_3_lab_2
             IFalling parrot2 = new Parrot();
             parrot2.Fall();
 
-            Zoo zoo = Zoo.GetInstance(2);
+            Zoo zoo = Zoo.GetInstance(3);
             Employee employee = new Employee(zoo);
 
             zoo.AddAnimal(new Parrot());
@@ -27,7 +27,8 @@ namespace OP_sem_3_lab_2
             employee.CompleteTask(() => Console.WriteLine("Also make some extra tasks"));
 
             Console.WriteLine(employee.ToDoList);
-            Console.WriteLine(employee.GetTimeLeft(() => DateTime.Now));
+            //Console.WriteLine(employee.GetTimeLeft(() => DateTime.Now.TimeOfDay));
+            Console.WriteLine(employee.GetTimeLeft(() => DateTime.Today.AddHours(15).TimeOfDay));
         }
     }
 }
