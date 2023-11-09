@@ -1,4 +1,6 @@
-﻿namespace OP_sem_3_lab_2
+﻿using System.Globalization;
+
+namespace OP_sem_3_lab_2
 {
     internal class Program
     {
@@ -13,7 +15,7 @@
             IFalling parrot2 = new Parrot();
             parrot2.Fall();
 
-            Zoo zoo = Zoo.GetInstance(10);
+            Zoo zoo = Zoo.GetInstance(3);
             Employee employee = new Employee(zoo);
 
             zoo.AddAnimal(new Parrot());
@@ -21,7 +23,13 @@
             zoo.AddAnimal(new Dolphin());
 
             Console.WriteLine(employee.ToDoList);
-        }
 
+            employee.CompleteTask(() => Console.WriteLine("Also make some extra tasks"));
+
+            Console.WriteLine(employee.ToDoList);
+            Console.WriteLine(employee.GetTimeLeft(() => DateTime.Now));
+
+            //Console.WriteLine(DateTime.Today.AddHours(18) - DateTime.Now);
+        }
     }
 }

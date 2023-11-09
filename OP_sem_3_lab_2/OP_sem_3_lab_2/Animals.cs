@@ -14,7 +14,7 @@ namespace OP_sem_3_lab_2
         void Fall();
     }
 
-    class MyEventArgs : EventArgs
+    internal class MyEventArgs : EventArgs
     {
         public Animal Animal { get; }
 
@@ -27,6 +27,7 @@ namespace OP_sem_3_lab_2
     class Employee
     {
         List<Animal> toDoList = new List<Animal>();
+        DateTime endOfShift = DateTime.Today.AddHours(20);
 
         public string ToDoList
         {
@@ -51,6 +52,25 @@ namespace OP_sem_3_lab_2
             toDoList.Add(e.Animal);
             Console.WriteLine("In zoo came new animal. I have more work :(");
         }
+
+        public void CompleteTask()
+        {
+            toDoList.RemoveAt(0); // MyException
+            Console.WriteLine("I have Done task!");
+        }
+
+        public void CompleteTask(Action action)
+        {
+            toDoList.RemoveAt(0);
+            Console.WriteLine("I have Done task!");
+            action?.Invoke();
+        }
+
+        public TimeSpan GetTimeLeft(Func<DateTime> func)
+        {
+            DateTime current = (DateTime)func?.Invoke(); // MyException
+            return endOfShift - current;
+        }
     }
 
     class Zoo
@@ -64,6 +84,10 @@ namespace OP_sem_3_lab_2
         private int pointer = 0;
 
         public Animal[] Animals { get => animals; }
+
+        public int Capacity { get => animals.Length; }
+
+        public int AnimalsAmount { get => pointer; }
 
         private Zoo(int capacity)
         {
@@ -79,8 +103,20 @@ namespace OP_sem_3_lab_2
 
         public void AddAnimal(Animal animal)
         {
-            if (pointer == animals.Length) return; // throw MyExeption
-            animals[pointer++] = animal;
+            try
+            {
+                if (pointer >= animals.Length)
+                    throw new ZooOverflowExeption("Your Zoo is overflowed", this);
+
+                animals[pointer++] = animal;
+            }
+            catch(ZooOverflowExeption ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Capacity of your zoo: {ex.Capacity},");
+                Console.WriteLine($"Current amount of your animals: {ex.AnimalsAmount}");
+                Console.WriteLine("Expand your zoo or left rest of animals");
+            }
 
             AnimalAdded?.Invoke(this, new MyEventArgs(animal));
         }
