@@ -518,4 +518,16 @@ namespace OP_sem_3_lab_2
 
         public override string GetTypeOfAnimal() => type;
     }
+
+    static class PrimateExtantion
+    {
+        internal static void Eat(this Primate primate)
+        {
+            Console.WriteLine("#                  \n" +
+                              "###              ##\n" +
+                              "  #######  ######  \n" +
+                              "     ##########    \n" +
+                              " \\______________/ \n");
+        }
+    }
 }

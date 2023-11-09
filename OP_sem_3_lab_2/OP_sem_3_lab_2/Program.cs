@@ -29,6 +29,9 @@ namespace OP_sem_3_lab_2
             Console.WriteLine(employee.ToDoList);
             //Console.WriteLine(employee.GetTimeLeft(() => DateTime.Now.TimeOfDay));
             Console.WriteLine(employee.GetTimeLeft(() => DateTime.Today.AddHours(15).TimeOfDay));
+
+            Primate p = new Primate();
+            p.Eat();
         }
     }
 }
