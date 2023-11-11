@@ -6,7 +6,7 @@ namespace OP_sem_3_lab_2
     {
         static void Main(string[] args)
         {
-            //MyMethod <=> = new Test(MyMethod)
+            //= MyMethod <=> = new Test(MyMethod)
             //test() <=> test.Invoke()
 
             IFlyable parrot = new Parrot();
@@ -22,13 +22,16 @@ namespace OP_sem_3_lab_2
             zoo.AddAnimal(new Primate());
             zoo.AddAnimal(new Dolphin());
 
+
             Console.WriteLine(employee.ToDoList);
 
+            employee.CompleteTask();
             employee.CompleteTask(() => Console.WriteLine("Also make some extra tasks"));
 
             Console.WriteLine(employee.ToDoList);
-            //Console.WriteLine(employee.GetTimeLeft(() => DateTime.Now.TimeOfDay));
-            Console.WriteLine(employee.GetTimeLeft(() => DateTime.Today.AddHours(15).TimeOfDay));
+
+            Console.WriteLine("Time to end of shift: "
+                + employee.GetTimeLeft(() => DateTime.Today.AddHours(15).TimeOfDay));
 
             Primate p = new Primate();
             p.Eat();

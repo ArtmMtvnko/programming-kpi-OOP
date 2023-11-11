@@ -48,6 +48,12 @@ namespace OP_sem_3_lab_2
         public Employee(Zoo zoo)
         {
             zoo.AnimalAdded += AddTask; // += new AnimalAddHandler(AddTask);
+
+            //zoo.AnimalAdded += (sender, e) =>
+            //{
+            //    toDoList.Add(e.Animal);
+            //    Console.WriteLine("In zoo came new animal. I have more work :(");
+            //};
         }
 
         public void AddTask(Zoo sender, MyEventArgs e)
@@ -76,6 +82,7 @@ namespace OP_sem_3_lab_2
 
         public void CompleteTask(Action action)
         {
+            if (toDoList.Count == 0) return;
             toDoList.RemoveAt(0);
             Console.WriteLine("I have Done task!");
             action?.Invoke();
@@ -142,6 +149,7 @@ namespace OP_sem_3_lab_2
                     throw new ZooOverflowExeption("Your Zoo is overflowed", this);
 
                 animals[pointer++] = animal;
+                AnimalAdded?.Invoke(this, new MyEventArgs(animal));
             }
             catch(ZooOverflowExeption ex)
             {
@@ -151,7 +159,6 @@ namespace OP_sem_3_lab_2
                 Console.WriteLine("Expand your zoo or left rest of animals");
             }
 
-            AnimalAdded?.Invoke(this, new MyEventArgs(animal));
         }
 
         public override string ToString()

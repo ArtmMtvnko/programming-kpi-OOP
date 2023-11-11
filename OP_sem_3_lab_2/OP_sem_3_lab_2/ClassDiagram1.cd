@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OP_sem_3_lab_2.MyEventArgs" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Animals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_2.Employee" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAQAAAAAgCAAAAAAAAAAAAAAACAAAAAgAABAA=</HashCode>
+      <FileName>Animals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_2.Zoo" Collapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAACAAAEAAAQAAACFABAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Animals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_2.Animal" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAEAAAg=</HashCode>
+      <FileName>Animals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_2.WaterAnimal" Collapsed="true">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAQIAAAEAAAABAAAAABAAAAAAAAAAEAAAg=</HashCode>
+      <FileName>Animals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_2.Dolphin" Collapsed="true">
+    <Position X="5.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAQIAAAEAAAABAAAAABAAAAAAAAAAEAAAg=</HashCode>
+      <FileName>Animals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_2.JellyFish" Collapsed="true">
+    <Position X="7.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAQIAAAEAAAABAAAAABAAAAAAAAAAEAAAg=</HashCode>
+      <FileName>Animals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_2.OverLand" Collapsed="true">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAQIAAAEAAAABAAAAABAAAAAAAAAAEAAAg=</HashCode>
+      <FileName>Animals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_2.Parrot" Collapsed="true">
+    <Position X="10" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAAAACAQIAAAEIAAABgAAAABAAAAAAADAEEAAAg=</HashCode>
+      <FileName>Animals.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OP_sem_3_lab_2.Primate" Collapsed="true">
+    <Position X="12.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAQIAAAEAAAABAAAAABAAAgAAAAAAEAAAg=</HashCode>
+      <FileName>Animals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_2.PrimateExtantion" Collapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_2.ZooOverflowExeption" Collapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAACAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomExeption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_2.EmptyTaskExeption" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAA=</HashCode>
+      <FileName>CustomExeption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_2.NegativeTimeExeption" Collapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomExeption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_2.TimeExeptionArgs" Collapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomExeption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_2.Program" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="OP_sem_3_lab_2.IFlyable" Collapsed="true">
+    <Position X="16.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Animals.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OP_sem_3_lab_2.IFalling" Collapsed="true">
+    <Position X="14.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
