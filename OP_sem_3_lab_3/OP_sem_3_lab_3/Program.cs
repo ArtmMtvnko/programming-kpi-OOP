@@ -4,34 +4,21 @@
     {
         static void Main(string[] args)
         {
-            Person director = new Composite("Director");
+            string desctiption = "Lorem ipsum, dolor sit amet consectetur adipisicing elit.\n" +
+                "Nesciunt nisi assumenda at.\n" +
+                "Omnis, suscipit perferendis, quae aspernatur impedit porro,\n" +
+                "minus facere mollitia consequuntur exercitationem harum tempora " +
+                "fugit molestiae ea voluptatibus.";
 
-            Person headTeacherJunior = new Composite("Junior headTeacher");
-            Person headTeacherMiddle = new Composite("Middle headTeacher");
-            Person headTeacherSenior = new Composite("Senior headTeacher");
 
-            director.Add(headTeacherJunior);
-            director.Add(headTeacherMiddle);
-            director.Add(headTeacherSenior);
+            PaymentControl report = new PaymentControl("*Your advertisement could be here*", desctiption);
 
-            Person teacher1 = new Employee("Teacher 1");
-            Person teacher2 = new Employee("Teacher 2");
-            Person teacher3 = new Employee("Teacher 3");
-            Person teacher4 = new Employee("Teacher 4");
-            Person teacher5 = new Employee("Teacher 5");
-            Person teacher6 = new Employee("Teacher 6");
+            report.Pay(100);
+            report.Pay(400);
 
-            headTeacherJunior.Add(teacher1);
-            headTeacherJunior.Add(teacher6);
+            Accountant accountant = new Accountant("Petrenko", "Petro", "Petrovich");
 
-            headTeacherMiddle.Add(teacher2);
-            headTeacherMiddle.Add(teacher5);
-
-            headTeacherSenior.Add(teacher3);
-            headTeacherSenior.Add(teacher4);
-
-            director.CollectPayment();
-            director.Display(2);
+            report.GetReport(accountant);
         }
     }
 }

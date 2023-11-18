@@ -41,6 +41,7 @@ namespace OP_sem_3_lab_3
         protected string post;
         protected int payment;
 
+        // protected? Person(string post) => this.post = post;
         public Person(string post) => this.post = post;
 
         public abstract void Add(Person person);
