@@ -19,4 +19,18 @@ namespace OP_sem_3_lab_4.Task3
             return JsonSerializer.Deserialize<PresentPack>(json);
         }
     }
+
+    class RunInProgram
+    {
+        public static void MyMain()
+        {
+            PresentPack pack = new PresentPack();
+
+            PresentPack clone = pack.DeepClone() as PresentPack;
+
+            CandysPack gottenPack = clone.GiftSet["Candys"] as CandysPack;
+            gottenPack.Eat();
+            Console.WriteLine(gottenPack.CandyAmount);
+        }
+    }
 }

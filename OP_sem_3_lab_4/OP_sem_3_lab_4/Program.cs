@@ -1,4 +1,5 @@
 ﻿using OP_sem_3_lab_4.Task3;
+using OP_sem_3_lab_4.Task4;
 
 namespace OP_sem_3_lab_4
 {
@@ -6,14 +7,19 @@ namespace OP_sem_3_lab_4
     {
         static void Main(string[] args)
         {
-            PresentPack pack = new PresentPack();
-            Console.WriteLine(pack.GiftSet);
+            CharacterFactory[] factories = new CharacterFactory[] 
+            {
+                new WarrionFactory(),
+                new MagicianFactory(),
+                new MinerFactory()
+            };
 
-            PresentPack clone = pack.DeepClone() as PresentPack;
-
-            CandysPack gottenPack = clone.GiftSet["Candys"] as CandysPack;
-            gottenPack.Eat();
-            Console.WriteLine(gottenPack.CandyAmount);
+            Character character;
+            foreach (CharacterFactory factory in factories)
+            {
+                character = factory.CreateCharacter();
+                character.Attack();
+            }
         }
     }
 }

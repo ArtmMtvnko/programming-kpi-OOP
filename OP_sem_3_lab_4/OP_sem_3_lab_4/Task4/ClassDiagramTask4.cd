@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OP_sem_3_lab_4.Task4.Character" Collapsed="true">
+    <Position X="8.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAgABAGAAABAAAAABAAAAAQIAAAAAAAAABKAAAAAA=</HashCode>
+      <FileName>Task4\Character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_4.Task4.Warrior" Collapsed="true">
+    <Position X="8.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Task4\Warrior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_4.Task4.Magician" Collapsed="true">
+    <Position X="10.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Task4\Magician.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_4.Task4.Miner" Collapsed="true">
+    <Position X="6" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Task4\Miner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_4.Task4.CharacterFactory" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Task4\Factory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_4.Task4.WarrionFactory" Collapsed="true">
+    <Position X="10.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Task4\Factory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_4.Task4.MagicianFactory" Collapsed="true">
+    <Position X="6" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Task4\Factory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_4.Task4.MinerFactory" Collapsed="true">
+    <Position X="8.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Task4\Factory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
