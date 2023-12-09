@@ -1,0 +1,15 @@
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\op_2_kp21_Matviienko\OP_sem_3_lab_4\OP_sem_3_lab_4\bin\Debug\net6.0\OP_sem_3_lab_4.exe
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\op_2_kp21_Matviienko\OP_sem_3_lab_4\OP_sem_3_lab_4\bin\Debug\net6.0\OP_sem_3_lab_4.deps.json
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\op_2_kp21_Matviienko\OP_sem_3_lab_4\OP_sem_3_lab_4\bin\Debug\net6.0\OP_sem_3_lab_4.runtimeconfig.json
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\op_2_kp21_Matviienko\OP_sem_3_lab_4\OP_sem_3_lab_4\bin\Debug\net6.0\OP_sem_3_lab_4.dll
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\op_2_kp21_Matviienko\OP_sem_3_lab_4\OP_sem_3_lab_4\bin\Debug\net6.0\OP_sem_3_lab_4.pdb
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\op_2_kp21_Matviienko\OP_sem_3_lab_4\OP_sem_3_lab_4\obj\Debug\net6.0\OP_sem_3_lab_4.csproj.AssemblyReference.cache
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\op_2_kp21_Matviienko\OP_sem_3_lab_4\OP_sem_3_lab_4\obj\Debug\net6.0\OP_sem_3_lab_4.GeneratedMSBuildEditorConfig.editorconfig
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\op_2_kp21_Matviienko\OP_sem_3_lab_4\OP_sem_3_lab_4\obj\Debug\net6.0\OP_sem_3_lab_4.AssemblyInfoInputs.cache
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\op_2_kp21_Matviienko\OP_sem_3_lab_4\OP_sem_3_lab_4\obj\Debug\net6.0\OP_sem_3_lab_4.AssemblyInfo.cs
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\op_2_kp21_Matviienko\OP_sem_3_lab_4\OP_sem_3_lab_4\obj\Debug\net6.0\OP_sem_3_lab_4.csproj.CoreCompileInputs.cache
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\op_2_kp21_Matviienko\OP_sem_3_lab_4\OP_sem_3_lab_4\obj\Debug\net6.0\OP_sem_3_lab_4.dll
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\op_2_kp21_Matviienko\OP_sem_3_lab_4\OP_sem_3_lab_4\obj\Debug\net6.0\refint\OP_sem_3_lab_4.dll
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\op_2_kp21_Matviienko\OP_sem_3_lab_4\OP_sem_3_lab_4\obj\Debug\net6.0\OP_sem_3_lab_4.pdb
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\op_2_kp21_Matviienko\OP_sem_3_lab_4\OP_sem_3_lab_4\obj\Debug\net6.0\OP_sem_3_lab_4.genruntimeconfig.cache
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\op_2_kp21_Matviienko\OP_sem_3_lab_4\OP_sem_3_lab_4\obj\Debug\net6.0\ref\OP_sem_3_lab_4.dll

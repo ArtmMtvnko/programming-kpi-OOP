@@ -9,8 +9,12 @@ namespace OP_sem_3_lab_4
         {
             PresentPack pack = new PresentPack();
             Console.WriteLine(pack.GiftSet);
+
             PresentPack clone = pack.DeepClone() as PresentPack;
-            Console.WriteLine(clone.GiftSet);
+
+            CandysPack gottenPack = clone.GiftSet["Candys"] as CandysPack;
+            gottenPack.Eat();
+            Console.WriteLine(gottenPack.CandyAmount);
         }
     }
 }
