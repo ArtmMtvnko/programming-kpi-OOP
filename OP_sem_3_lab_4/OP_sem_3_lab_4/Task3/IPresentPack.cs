@@ -2,7 +2,7 @@
 {
     interface IPresentPack
     {
-        public Dictionary<object, int> GiftSet { get; }
+        public Dictionary<string, object> GiftSet { get; }
         IPresentPack DeepClone();
     }
 }

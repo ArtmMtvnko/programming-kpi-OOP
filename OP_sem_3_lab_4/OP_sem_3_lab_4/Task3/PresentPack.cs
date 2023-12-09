@@ -2,22 +2,17 @@
 
 namespace OP_sem_3_lab_4.Task3
 {
-    class PresentPack
+    class PresentPack : IPresentPack
     {
-        private Dictionary<object, int> _giftSet = new Dictionary<object, int>()
+        private Dictionary<string, object> _giftSet = new Dictionary<string, object>()
         {
-            { new Toy("Lightning McQueen"), 2 },
-            { new CandysPack(), 3 },
-            { new KidConstructor("LEGO"), 1 },
+            {"Toy", new Toy("Lightning McQueen") },
+            {"Candys", new CandysPack() },
+            {"Constructor", new KidConstructor("LEGO") },
         };
+        public Dictionary<string, object> GiftSet { get { return _giftSet; } }
 
-        public int SUKA { get; set; } = 10;
-
-        //private CandysPack cp = new CandysPack();
-        //public CandysPack CandyPask { get { return cp; } }
-        public Dictionary<object, int> GiftSet { get { return _giftSet; } }
-
-        public PresentPack DeepClone()
+        public IPresentPack DeepClone()
         {
             string json = JsonSerializer.Serialize(this);
             Console.WriteLine(json);
