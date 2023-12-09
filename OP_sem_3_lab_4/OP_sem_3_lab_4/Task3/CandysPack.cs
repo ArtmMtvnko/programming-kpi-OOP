@@ -1,7 +1,4 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-
-namespace OP_sem_3_lab_4.Task3
+﻿namespace OP_sem_3_lab_4.Task3
 {
     class CandysPack
     {
