@@ -5,7 +5,5 @@
         public string Type { get; set; }
 
         public KidConstructor(string type) => Type = type;
-
-        public KidConstructor() { }
     }
 }

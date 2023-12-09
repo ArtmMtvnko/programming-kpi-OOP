@@ -4,11 +4,6 @@
     {
         public string Type { get; set; }
 
-        public Toy(string type)
-        {
-            Type = type;
-        }
-
-        public Toy() { }
+        public Toy(string type) => Type = type;
     }
 }

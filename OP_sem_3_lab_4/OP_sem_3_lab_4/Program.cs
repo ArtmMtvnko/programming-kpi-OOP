@@ -7,9 +7,9 @@ namespace OP_sem_3_lab_4
     {
         static void Main(string[] args)
         {
-            IPresentPack pack = new PresentPack();
+            PresentPack pack = new PresentPack();
             Console.WriteLine(pack.GiftSet);
-            IPresentPack clone = pack.DeepClone();
+            PresentPack clone = pack.DeepClone() as PresentPack;
             Console.WriteLine(clone.GiftSet);
         }
     }

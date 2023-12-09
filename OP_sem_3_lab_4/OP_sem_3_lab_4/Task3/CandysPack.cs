@@ -7,8 +7,6 @@ namespace OP_sem_3_lab_4.Task3
     {
         private int _candyAmount = 15;
 
-        public CandysPack() { }
-
         public int CandyAmount
         {
             get { return _candyAmount; }

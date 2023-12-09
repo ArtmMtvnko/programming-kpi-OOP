@@ -7,7 +7,7 @@ namespace OP_sem_3_lab_4.Task3
         private Dictionary<string, object> _giftSet = new Dictionary<string, object>()
         {
             {"Toy", new Toy("Lightning McQueen") },
-            {"Candys", new CandysPack() },
+            {"Candys", new CandysPack()},
             {"Constructor", new KidConstructor("LEGO") },
         };
         public Dictionary<string, object> GiftSet { get { return _giftSet; } }
