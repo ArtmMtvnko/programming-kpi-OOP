@@ -15,6 +15,7 @@ namespace OP_sem_3_lab_4
             };
 
             Character character;
+
             foreach (CharacterFactory factory in factories)
             {
                 character = factory.CreateCharacter();
