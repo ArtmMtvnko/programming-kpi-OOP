@@ -29,7 +29,7 @@
         }
     }
 
-    class RunInProgram
+    class RunInProgram2
     {
         public static void MyMain()
         {

@@ -7,20 +7,7 @@ namespace OP_sem_3_lab_4
     {
         static void Main(string[] args)
         {
-            CharacterFactory[] factories = new CharacterFactory[] 
-            {
-                new WarrionFactory(),
-                new MagicianFactory(),
-                new MinerFactory()
-            };
-
-            Character character;
-
-            foreach (CharacterFactory factory in factories)
-            {
-                character = factory.CreateCharacter();
-                character.Attack();
-            }
+            RunInProgram2.MyMain();
         }
     }
 }
