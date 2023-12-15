@@ -7,7 +7,7 @@ namespace OP_sem_3_lab_5.Task6
         public string SaveText(string text)
         {
             //return Convert.ToBase64String(Encoding.UTF8.GetBytes(text));
-            return text.GetHashCode().ToString();
+            return Math.Abs(text.GetHashCode()).ToString();
         }
     }
 }
