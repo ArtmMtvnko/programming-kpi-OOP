@@ -13,4 +13,25 @@
 
         public abstract void RemoveUser();
     }
+
+    class RunInProgram1
+    {
+        public static void MyMain()
+        {
+            State state = new FreeState();
+            Server server = new Server(state);
+            server.AddUser();
+            Console.WriteLine("--------------------");
+            server.AddUser();
+
+            Console.WriteLine("\n====================\n");
+
+            server.RemoveUser();
+            Console.WriteLine("--------------------");
+            server.RemoveUser();
+
+            Console.WriteLine("\n====================\n");
+            server.AddUser();
+        }
+    }
 }

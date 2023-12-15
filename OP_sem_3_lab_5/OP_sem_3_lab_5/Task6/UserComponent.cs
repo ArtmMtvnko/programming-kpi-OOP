@@ -1,11 +1,30 @@
-﻿using OP_sem_3_lab_5.Task5;
-using OP_sem_3_lab_5.Task6;
+﻿using System.Security.Cryptography.X509Certificates;
 
-namespace OP_sem_3_lab_5
+namespace OP_sem_3_lab_5.Task6
 {
-    internal class Program
+    class UserComponent
     {
-        static void Main(string[] args)
+        private string _text;
+        private ISaveText _saveText;
+
+        public string Text { get; }
+
+        public ISaveText SaveType { set { _saveText = value; } }
+
+        public void WriteText()
+        {
+            _text = Console.ReadLine();
+        }
+
+        public string SaveText()
+        {
+            return _saveText.SaveText(_text);
+        }
+    }
+
+    class RunInProgram2
+    {
+        public static void MyMain()
         {
             UserComponent userComponent = new UserComponent();
 

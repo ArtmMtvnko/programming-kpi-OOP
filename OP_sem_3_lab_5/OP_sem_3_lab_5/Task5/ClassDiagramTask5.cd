@@ -1,2 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OP_sem_3_lab_5.Task5.Server">
+    <Position X="13.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAACAAAAAAAAAAgAABAAAAAAAA=</HashCode>
+      <FileName>Task5\Server.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_state" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OP_sem_3_lab_5.Task5.State">
+    <Position X="9.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAQAAAAAAACAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Task5\State.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_server" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OP_sem_3_lab_5.Task5.FreeState" Collapsed="true">
+    <Position X="8.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Task5\FreeState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OP_sem_3_lab_5.Task5.BusyState" Collapsed="true">
+    <Position X="11.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Task5\BusyState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
