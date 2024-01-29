@@ -27,6 +27,14 @@ namespace OP_sem_3_lab_4.Task3
             PresentPack pack = new PresentPack();
 
             PresentPack clone = pack.DeepClone() as PresentPack;
+            PresentPack clone1 = pack.DeepClone() as PresentPack;
+            PresentPack clone2 = pack.DeepClone() as PresentPack;
+
+            Console.WriteLine("Original: " + pack.GiftSet);
+
+            Console.WriteLine("Clone1: " + clone.GiftSet);
+            Console.WriteLine("Clone2: " + clone1.GiftSet);
+            Console.WriteLine("Clone3: " + clone2.GiftSet);
 
             CandysPack gottenPack = clone.GiftSet["Candys"] as CandysPack;
             gottenPack.Eat();
